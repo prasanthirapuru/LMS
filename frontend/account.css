@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  background: url('images/background-capstone.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: rgba(0, 0, 60, 0.85);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form label {
+  text-align: left;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.login-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.login-form button {
+  padding: 12px;
+  background-color: #0055aa;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #0070dd;
+}
+
+.form-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.form-footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
