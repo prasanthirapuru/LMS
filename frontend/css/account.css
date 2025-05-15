@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
-  background: url('images/background-capstone.png') no-repeat center center fixed;
+  background: url('../images/background-capstone.png') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
