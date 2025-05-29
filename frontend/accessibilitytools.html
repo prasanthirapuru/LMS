@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessibility Tools - LMS</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <style>
+    .tools-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      color: white;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .tools-box h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+      background-color: rgba(0, 0, 70, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 14px;
+      margin-right: 8px;
+      background-color: #006699;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004466;
+    }
+
+    .high-contrast {
+      background-color: black !important;
+      color: yellow !important;
+    }
+
+    body {
+      margin: 0;
+      font-weight: bold;
+      background: url('../images/background-capstone.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="myaccount.html">My Account</a>
+    <a href="bemember.html">Be a Member</a>
+    <a href="accessibilitytools.html">Accessibility Tools</a>
+    <a href="newpublished.html">New Published</a>
+    <a href="ourselection.html">Our Selection</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contactus.html">Contact Us</a>
+  </div>
+
+  <div class="main-container">
+    <div class="tools-box">
+      <h1>Accessibility Tools</h1>
+
+      <div class="section" aria-label="Screen Reader Support">
+        <h2>🦻 Screen Reader Support</h2>
+        <p>This website is compatible with screen readers like NVDA, JAWS, and VoiceOver. All interactive elements have appropriate ARIA labels and roles.</p>
+      </div>
+
+      <div class="section" aria-label="High Contrast Mode">
+        <h2>🌗 High Contrast Mode</h2>
+        <button onclick="toggleContrast()">Toggle High Contrast</button>
+      </div>
+
+      <div class="section" aria-label="Text Size Options">
+        <h2>🔠 Adjust Text Size</h2>
+        <button onclick="changeFontSize(1)">A+</button>
+        <button onclick="changeFontSize(-1)">A-</button>
+        <button onclick="resetFontSize()">Reset

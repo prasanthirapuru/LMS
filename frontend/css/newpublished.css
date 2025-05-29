@@ -6,6 +6,25 @@ body {
   color: white;
 }
 
+.top-nav {
+  background-color: rgba(0, 0, 70, 0.8);
+  padding: 12px 0;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
 .new-books-container {
   max-width: 800px;
   margin: 60px auto;
