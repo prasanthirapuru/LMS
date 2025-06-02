@@ -3,7 +3,7 @@ package com.lms2025.librarymanagementsystem.model;
 import jakarta.persistence.*;
 
 @Entity
-public class user {
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
