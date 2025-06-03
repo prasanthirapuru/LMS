@@ -27,9 +27,9 @@ body {
 
 .register-container {
   max-width: 400px;
-  margin: 80px auto;
+  margin: 40px auto;
   background-color: rgba(0, 0, 60, 0.85);
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   text-align: center;
