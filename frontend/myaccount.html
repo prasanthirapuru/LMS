@@ -31,6 +31,13 @@
       <label for="password"><i class="fas fa-lock"></i> Password</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" required />
 
+      <label for="role"><i class="fas fa-users-cog"></i> Login as</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>Select role</option>
+        <option value="member">Member</option>
+        <option value="librarian">Librarian</option>
+      </select>
+      
       <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
 
       <div class="form-footer">

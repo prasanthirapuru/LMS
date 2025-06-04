@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/account.css" />
+  <link rel="stylesheet" href="css/all.min.css"/>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Edit Book</h1>
+
+    <form action="/books/update" method="POST" class="form-box">
+      <label for="isbn">ISBN (Book to Update):</label>
+      <input type="text" name="isbn" required>
+
+      <label for="title">New Title:</label>
+      <input type="text" name="title">
+
+      <label for="author">New Author:</label>
+      <input type="text" name="author">
+
+      <label for="description">New Description:</label>
+      <textarea name="description" rows="4"></textarea>
+
+      <label for="category">New Category:</label>
+      <input type="text" name="category">
+
+      <label for="publishedDate">New Published Date:</label>
+      <input type="date" name="publishedDate">
+
+      <button type="submit">Update Book</button>
+    </form>
+
+    <a href="librariandashboard.html" >← Back to Dashboard</a>
+  </div>
+</body>
+</html>

@@ -66,6 +66,15 @@ h1 {
   color: #333;
 }
 
+.login-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
 .login-form button {
   padding: 12px;
   background-color: #0055aa;

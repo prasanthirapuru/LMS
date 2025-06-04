@@ -170,6 +170,49 @@ h1 {
   border-top: 1px solid #333;
 }
 
+.admin-banner {
+  background-color: #333366;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  background-color: rgba(0, 0, 70, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: white;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.form-box input,
+.form-box textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.form-box button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #006699;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     h1 {
