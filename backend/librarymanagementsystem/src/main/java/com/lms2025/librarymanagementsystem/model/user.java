@@ -2,7 +2,9 @@ package com.lms2025.librarymanagementsystem.model;
 
 import jakarta.persistence.*;
 
+
 @Entity
+@Table(name = "app_user")
 public class User {
     
     @Id
