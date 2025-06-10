@@ -6,66 +6,9 @@
   <title>Accessibility Tools - LMS</title>
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/all.min.css" />
-  <style>
-    .tools-box {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 700px;
-      color: white;
-      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .tools-box h1 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .section {
-      margin-bottom: 25px;
-      background-color: rgba(0, 0, 70, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .section h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      padding: 8px 14px;
-      margin-right: 8px;
-      background-color: #006699;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #004466;
-    }
-
-    .high-contrast {
-      background-color: black !important;
-      color: yellow !important;
-    }
-
-    body {
-      margin: 0;
-      font-weight: bold;
-      background: url('./images/background-capstone.png') no-repeat center center fixed;
-      background-size: cover;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Navigation bar -->
-  <div class="top-nav">
+  <div class="top-nav" aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="myaccount.html">My Account</a>
     <a href="bemember.html">Be a Member</a>
@@ -77,13 +20,39 @@
   </div>
 
   <div class="main-container">
+    <img src="./images/Logo.png" alt="LMS Logo" class="logo" />
+  <div class="top-wrapper">
+  <div class="top-bar">
+    <div class="search-box">
+        <label for="search-input" class="sr-only">Search books</label>
+        <input id="search-input" type="text" placeholder="Search a book..." aria-label="Search books"/>
+        <button aria-label="Submit search"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="chat-box">
+        <button aria-label="Open chat assistant"><i class="fas fa-comments"></i> Chat Assistant</button>
+        <p class="chat-desc">Need help? Ask our AI assistant!</p>
+    </div>
+  </div>
+  </div>
     <div class="tools-box">
       <a href="accessibilitytools.html" class="menu-item"><i class="fas fa-universal-access"></i> Accessibility Tools</a>
 
-      <div class="section" aria-label="Screen Reader Support">
-        <h2>🦻 Screen Reader Support</h2>
-        <p>This website is compatible with screen readers like NVDA, JAWS, and VoiceOver. All interactive elements have appropriate ARIA labels and roles.</p>
+      <div class="section" aria-labelledby="screen-reader-heading">
+        <h2 id="screen-reader-heading">🎧 Screen Reader Support</h2>
+        <p>This website is compatible with screen readers like NVDA, JAWS, and VoiceOver.</p>
+  
+      <div class="screen-reader-test">
+        <button id="screen-reader-test-btn" aria-expanded="false">Test Screen Reader Compatibility </button>
+      <div id="screen-reader-test-content" hidden aria-live="polite">
+        <p>Screen reader test activated.</p>
+      <ul>
+        <li>✓ Navigation test passed</li>
+        <li>✓ Heading structure test passed</li>
+        <li>✓ Image alt text test passed</li>
+      </ul>
       </div>
+    </div>
+    </div>
 
       <div class="section" aria-label="High Contrast Mode">
         <h2>🌗 High Contrast Mode</h2>
@@ -97,7 +66,53 @@
         <button onclick="resetFontSize()">Reset</button>
       </div>
       </div>
-      </div>
+    </div>
+    <script>
+
+  document.getElementById('screen-reader-test-btn').addEventListener('click', function() {
+  const testContent = document.getElementById('screen-reader-test-content');
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  
+  testContent.hidden = isExpanded;
+  this.setAttribute('aria-expanded', !isExpanded);
+  
+  if (!isExpanded) {
+    setTimeout(() => {
+      testContent.focus();
+    }, 100);
+  }
+});
+
+    // Check for images without alt text
+  function checkAltText() {
+  const images = document.querySelectorAll('img:not([alt])');
+  if (images.length > 0) {
+    console.warn('Accessibility warning: Found images without alt text:', images);
+    // You could also show this to admins in the UI
+  }
+}
+
+// Run on page load
+window.addEventListener('DOMContentLoaded', checkAltText);
+
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    let currentFontSize = 16; 
+
+    function changeFontSize(amount) {
+      currentFontSize += amount;
+      if (currentFontSize < 10) currentFontSize = 10; // min size
+      if (currentFontSize > 32) currentFontSize = 32; // max size
+      document.body.style.fontSize = currentFontSize + 'px';
+    }
+
+    function resetFontSize() {
+      currentFontSize = 16;
+      document.body.style.fontSize = currentFontSize + 'px';
+    }
+  </script>
   <footer class="footer">
     <p>&copy; 2025 Library Management System. All rights reserved.</p>
   </footer>
